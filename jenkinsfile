@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/anjalii13/MyProject.git'
+            }
+        }
+        stage('Docker Build & Push') {
+            steps {
+                sh 'docker build -t yourdockerhubusername/myproject:latest .'
+                sh 'docker push yourdockerhubusername/myproject:latest'
+            }
+        }
+    }
+}
