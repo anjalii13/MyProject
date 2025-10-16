@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Resume Job Matcher</h1>
+
+        <form method="POST" class="form-box">
+            <label for="resume">Paste Your Resume</label>
+            <textarea id="resume" name="resume" rows="6" placeholder="Paste your resume here...">{{ resume_text }}</textarea>
+
+            <label for="location">Preferred Location</label>
+            <input id="location" type="text" name="location" value="{{ location }}" placeholder="e.g. India, Bangalore">
+
+            <button type="submit">Find Jobs</button>
+        </form>
+
+        {% if skills %}
+            <div class="skills-box">
+                <h2>🛠 Extracted Skills</h2>
+                <ul>
+                    {% for skill in skills %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if matches %}
+            <div class="jobs-box">
+                <h2>Top Matching Jobs</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Match %</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for job in matches %}
+                        <tr>
+                            <td>{{ job.title }}</td>
+                            <td>{{ job.company }}</td>
+                            <td>{{ job.location }}</td>
+                            <td>{{ job.score }}%</td>
+                            <td><a href="{{ job.url }}" target="_blank" class="btn-link">View</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

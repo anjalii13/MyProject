@@ -1,0 +1,116 @@
+/* General page */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+h2 {
+    margin-top: 25px;
+    color: #34495e;
+}
+
+/* Form styling */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+textarea, input {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* Skills box */
+.skills-box ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 0;
+}
+
+.skills-box li {
+    list-style: none;
+    background: #ecf0f1;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Jobs table */
+.jobs-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.jobs-box th, .jobs-box td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.jobs-box th {
+    background: #3498db;
+    color: white;
+}
+
+.jobs-box tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #2ecc71;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.btn-link:hover {
+    background: #27ae60;
+}
